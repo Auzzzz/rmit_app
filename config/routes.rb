@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
-  get 'categories/new'
 
-  get 'categories/index'
 
-  get 'categories/edit'
-
-  get 'locations/new'
-
+ 
   get 'locations/index'
 
   get 'locations/edit'
@@ -23,4 +18,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
+  
+  resources :locations
 end
