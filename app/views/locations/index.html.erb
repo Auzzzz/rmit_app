@@ -1,2 +1,12 @@
-<h1>Locations#index</h1>
-<p>Find me in app/views/locations/index.html.erb</p>
+<% provide(:title, 'All Locations') %>
+<h1>All users</h1>
+
+<ul class="users">
+  <% @location.each do |location| %>
+    <li>
+      
+      <%= link_to location.name, location %>
+    </li>
+    
+  <% end %>
+</ul>
