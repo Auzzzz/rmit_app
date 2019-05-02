@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   
   
   def index
-  
-    @location = Location.all
+    @location = Location.all()
   end
 
 end
