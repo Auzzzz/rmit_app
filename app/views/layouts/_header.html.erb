@@ -41,12 +41,25 @@
 
             </ul>
           </li>
+          
+          <!-- Courses -->
         
-          <li><%= link_to "Log in", login_path %></li>
-       
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Courses <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>Test</li>
+              <%# @location.each do |location| %>
+              <li><%#= link_to location.name, location %></li>
+              <%# end %>
+             <li><%= link_to "All Courses", courses_path %></li>
+
+            </ul>
+          </li>
+          
         
-        
-        <!-- Users -->
+      <!-- Users -->
         <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>
           <!-- Account -->
