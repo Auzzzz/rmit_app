@@ -4,6 +4,12 @@ Rails.application.routes.draw do
  
  
 
+  get 'categories/new'
+
+  get 'categories/show'
+
+  get 'categories/edit'
+
   get 'locations/index'
 
   get 'locations/edit'
@@ -23,5 +29,5 @@ Rails.application.routes.draw do
   
   resources :locations
   resources :categories
-  
+  resources :courses
 end
