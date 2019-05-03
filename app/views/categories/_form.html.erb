@@ -1,9 +1,9 @@
 <div class="form">
-    <%= form_for(@location) do |f| %>
+    <%= form_for(@category) do |f| %>
        
         <div class="form-group">
           <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control', id: 'location'%>
+          <%= f.text_field :name, class: 'form-control', id: 'category'%>
         </div>
         <%= f.submit class: 'btn btn-primary btn-primary--wide' %>
     <% end %>

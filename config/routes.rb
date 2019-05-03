@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
  
+ 
+
   get 'locations/index'
 
   get 'locations/edit'
@@ -20,6 +22,6 @@ Rails.application.routes.draw do
   resources :users
   
   resources :locations
-
+  resources :categories
   
 end
