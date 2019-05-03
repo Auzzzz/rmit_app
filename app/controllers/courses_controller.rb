@@ -3,15 +3,26 @@ class CoursesController < ApplicationController
      @course = Course.new
   end
   
-  def create
-    @course = Courses.new(course_params)
-    if @course.save
-      log_in @course
-      flash[:success] = "CourseMade - Good luck!"
+  def index
+    @course = Course.all
+  end
+  
+  def show
+   @course = Course.find(params[:id])
+  end
+  
+def create
+    new_course = params.require(:course).permit(:name)
+    @course = Course.new(new_course)
+    
+    
+  if @course.save
+      
+      flash[:success] = "Category Made Successfully - #{@course.name}"
       redirect_to @course
-    else
+  else
       render 'new'
-    end
+  end
   end
   
 end
