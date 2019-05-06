@@ -11,18 +11,15 @@ class CoursesController < ApplicationController
    @course = Course.find(params[:id])
   end
   
-def create
+  def create
     new_course = params.require(:course).permit(:name)
     @course = Course.new(new_course)
     
-    
-  if @course.save
-      
+    if @course.save
       flash[:success] = "Category Made Successfully - #{@course.name}"
       redirect_to @course
-  else
+    else
       render 'new'
+    end
   end
-  end
-  
 end

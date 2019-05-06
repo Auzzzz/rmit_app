@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   
   
   def populate
-    @location = Location.all.order(:name) #tute help with getting .order
+    @locations = Location.all.order(:name) #tute help with getting .order
+    @courses = Course.all.order(:name) #tute help with getting .order
+    @categorys = Category.all.order(:name) #tute help with getting .order
+    #https://stackoverflow.com/questions/14628692/undefined-method-each-rails-error
   end
 
 end

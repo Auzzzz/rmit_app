@@ -18,7 +18,6 @@ class CategoriesController < ApplicationController
     
     
   if @category.save
-      
       flash[:success] = "Category Made Successfully - #{@category.name}"
       redirect_to @category
   else
