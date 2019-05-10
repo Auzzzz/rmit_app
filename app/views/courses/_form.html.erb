@@ -7,7 +7,7 @@
   <%= f.text_field :desc, class: 'form-control' %>
 
   <%= f.label :locations %>
-  <%= f.select :locations, options_from_collection_for_select(@location, :id, :name, @course.locations.ids), {}, class: 'form-control' %>
+  <%= f.text_field :locations, class: 'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %> 
