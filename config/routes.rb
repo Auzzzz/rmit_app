@@ -4,6 +4,10 @@ Rails.application.routes.draw do
  
  
 
+  get 'downvote/new'
+
+  get 'upvote/new'
+
   get 'categories/new'
 
   get 'categories/show'
