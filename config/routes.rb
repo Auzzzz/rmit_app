@@ -4,10 +4,6 @@ Rails.application.routes.draw do
  
  
 
-  get 'downvote/new'
-
-  get 'upvote/new'
-
   get 'categories/new'
 
   get 'categories/show'
@@ -29,6 +25,11 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  
+
+  post 'courses/:id/upvote', to: 'upvotes#new', as: 'upvote'
+  post 'courses/:id/downvote', to: 'downvotes#new', as: 'downvote'
+  
   resources :users
   
   resources :locations

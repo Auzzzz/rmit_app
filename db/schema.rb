@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190503010813) do
+ActiveRecord::Schema.define(version: 20190515101554) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_courses", id: false, force: :cascade do |t|
+    t.integer "course_id", null: false
+    t.integer "category_id", null: false
+    t.index ["category_id"], name: "index_categories_courses_on_category_id"
+    t.index ["course_id"], name: "index_categories_courses_on_course_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -26,8 +33,27 @@ ActiveRecord::Schema.define(version: 20190503010813) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "courses_locations", id: false, force: :cascade do |t|
+    t.integer "course_id", null: false
+    t.integer "location_id", null: false
+    t.index ["course_id"], name: "index_courses_locations_on_course_id"
+    t.index ["location_id"], name: "index_courses_locations_on_location_id"
+  end
+
+  create_table "downvotes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "upvotes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

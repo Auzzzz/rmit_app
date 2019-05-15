@@ -2,9 +2,13 @@
 <h1>All Courses</h1>
 
 <ul class="users">
+  
   <% @course.each do |course| %>
+  <div class="jumbotron">
     <li>
       <%= link_to course.name, course %>
     </li>
+    </div>
   <% end %>
+  
 </ul>

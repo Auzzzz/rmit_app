@@ -12,14 +12,19 @@ class CoursesController < ApplicationController
   end
   
   def create
-    new_course = params.require(:course).permit(:name)
-    @course = Course.new(new_course)
+
+    @course = Course.new(course_perms)
     
-    if @course.save
+    if @course.valid?
+      @course.save
       flash[:success] = "Category Made Successfully - #{@course.name}"
       redirect_to @course
     else
       render 'new'
     end
+  end
+  
+  def course_perms
+    params.require(:course).permit([:name, :desc, :locations => [], :categories => []])
   end
 end
