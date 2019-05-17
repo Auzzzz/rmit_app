@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20190515101554) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_courses_on_name", unique: true
   end
 
   create_table "courses_locations", id: false, force: :cascade do |t|
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20190515101554) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["id"], name: "index_locations_on_id", unique: true
   end
 
   create_table "upvotes", force: :cascade do |t|
