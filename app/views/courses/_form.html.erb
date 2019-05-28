@@ -11,6 +11,9 @@
   
   <%= f.label :categories %>
   <%= f.select :categories, options_from_collection_for_select(@categories, :id, :name)%>
+  
+    <%= f.label :prerequisites %>
+  <%= f.select :prerequisites, options_from_collection_for_select(@courses, :id, :name)%>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %> 

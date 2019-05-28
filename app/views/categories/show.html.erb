@@ -2,9 +2,14 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
-        <%= @category.name %>
-      </h1>
+      
+      <% if (@courses.present?) %>
+  <%= render 'shared/list', courses: @courses %>
+<% else %>
+  <p class="center">Oh No! we dont have any courses made</p>
+  <% end %>
+
+      
     </section>
   </aside>
 </div>
